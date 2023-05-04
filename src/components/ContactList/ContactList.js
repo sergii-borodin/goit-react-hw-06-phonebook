@@ -6,9 +6,14 @@ import { ContactListContainer, ContactItem } from './ContactList.styled';
 
 const ContactList = () => {
   const contacts = useSelector(state => state.contacts);
+  const filterValue = useSelector(state => state.filter);
+
+  const filteredContactsList = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filterValue)
+  );
   return (
     <ContactListContainer>
-      {contacts.map(contact => (
+      {filteredContactsList.map(contact => (
         <ContactItem key={contact.id}>
           <Contact contact={contact} />
         </ContactItem>

@@ -5,14 +5,13 @@ import { deleteContact } from 'redux/contactsSlice';
 import { PlainText, Button } from './Contact.styled';
 
 const Contact = ({ contact }) => {
+  const { name, number, id } = contact;
   const dispatch = useDispatch();
   return (
     <>
-      <PlainText>{contact.name}</PlainText>
-      <PlainText>{contact.number}</PlainText>
-      <Button onClick={() => dispatch(deleteContact(contact.id))}>
-        Delete
-      </Button>
+      <PlainText>{name}</PlainText>
+      <PlainText>{number}</PlainText>
+      <Button onClick={() => dispatch(deleteContact(id))}>Delete</Button>
     </>
   );
 };
