@@ -5,7 +5,6 @@ import { Input } from './Filter.styled';
 
 const Filter = () => {
   const filterValue = useSelector(state => state.filter);
-  console.log(filterValue);
   const dispatch = useDispatch();
 
   return (

@@ -3,10 +3,11 @@ import Contact from './Contact/Contact';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { ContactListContainer, ContactItem } from './ContactList.styled';
+import { getContactsList, getFilter } from 'redux/selectors';
 
 const ContactList = () => {
-  const contacts = useSelector(state => state.contacts);
-  const filterValue = useSelector(state => state.filter);
+  const contacts = useSelector(getContactsList);
+  const filterValue = useSelector(getFilter);
 
   const filteredContactsList = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filterValue)

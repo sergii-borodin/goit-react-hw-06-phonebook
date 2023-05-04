@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from 'redux/contactsSlice';
+import { getContactsList } from 'redux/selectors';
 
 import { Form, SubmitButton } from './ContactForm.styled';
 
@@ -10,7 +11,7 @@ const ContactForm = () => {
   const [telNumber, setTelNumber] = useState('');
   const dispatch = useDispatch();
 
-  const contacts = useSelector(state => state.contacts);
+  const contacts = useSelector(getContactsList);
 
   const addName = e => {
     const newName = e.currentTarget.value;
