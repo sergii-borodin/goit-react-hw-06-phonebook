@@ -12,6 +12,6 @@ export const MainContainer = styled.div`
   background-color: rgba(255, 255, 255, 1);
   @media screen and (max-width: 660px) {
     width: auto;
-    margin: 0 100px;
+    margin: 25px;
   }
 `;
